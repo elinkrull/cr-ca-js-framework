@@ -4,4 +4,4 @@ export default function Footer() {
             <small>© 2024 Elin Thoen Jakobsen development. All rights reserved.</small>
         </footer>
     )
-}
+};

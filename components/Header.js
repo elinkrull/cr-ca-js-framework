@@ -11,4 +11,4 @@ export default function Header() {
 		<img src="#" className="cart-icon" alt="Cart Icon" />
 		</header>
 	)
-}
+};
