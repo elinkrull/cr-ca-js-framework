@@ -1,17 +1,3 @@
-// import Footer from "../components/Footer"
-// import Header from "../components/Header"
-// import Searchbar from "../components/Searchbar"
-
-// export default function Homepage() {
-// 	return (
-// 		<body>
-// 		<Header />
-// 		<Searchbar />
-// 		<Footer />
-// 		</body>
-// 	)
-// };
-
 import Searchbar from "../components/Searchbar"
 import Product from "../components/Product"
 import { useEffect, useState } from "react";
