@@ -10,9 +10,9 @@ export default function App() {
     <Router className="app-container">
 		<Routes>
 			<Route path="/" element={<Homepage />} />
-			<Route path="/Contact" element={<ContactPage />} />
+			<Route path="/contact" element={<ContactPage />} />
 			<Route path="/checkout-success" element={<CheckoutSuccessPage />} />
-          <Route path="/product/:id" element={<IndividualProductPage />} />
+          	<Route path="/product/:id" element={<IndividualProductPage />} />
 		</Routes>
     </Router>
   )
