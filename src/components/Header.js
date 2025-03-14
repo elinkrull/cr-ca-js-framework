@@ -3,18 +3,14 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
 	return (
-		<header className="header">
-		
-		<p>
-		HEADER
-		</p>
-		<Link className="nav-link" to="/">HOME</Link>
+		<div className="header">
+		<h1>SHOP</h1>
 		<nav className="navbar">
+			<Link className="nav-link" to="/">HOME</Link>
      		<Link to="/" className="nav-link">PRODUCTS</Link>
     		<Link to="./pages/ContactPage" className="nav-link">CONTACT</Link>
     	</nav>
-		<img src="#" className="cart-icon" alt="Cart Icon" />
 		<ShoppingCart className="shopping-cart" />
-		</header>
+		</div>
 	)
 };
