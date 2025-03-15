@@ -1,14 +1,16 @@
-// import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
-// export default function CheckoutPage() {
-//   const navigate = useNavigate();
+export default function CartPage() {
 
-//   return (
-//     <div>
-//       <h1>Checkout Page</h1>
-//       <button onClick={() => navigate("/checkout-success")}>
-//         Complete Purchase
-//       </button>
-//     </div>
-//   );
-// }
+  return (
+    <div>
+		<Header />
+      <h1>Checkout Page</h1>
+      <button>
+        Complete Purchase
+      </button>
+	  <Footer />
+    </div>
+  );
+}
