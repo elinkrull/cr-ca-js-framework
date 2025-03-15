@@ -1,16 +1,16 @@
-import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
+import CartIcon from "./CartIcon";
+
 
 export default function Header() {
 	return (
 		<div className="header">
-		<h1>SHOP</h1>
+		<Link to="/" className="nav-link"><h1>HAPPYSHOP</h1></Link>
 		<nav className="navbar">
-			<Link className="nav-link" to="/">HOME</Link>
      		<Link to="/" className="nav-link">PRODUCTS</Link>
-    		<Link to="./pages/ContactPage" className="nav-link">CONTACT</Link>
+    		<Link to="/contact" className="nav-link">CONTACT</Link>
     	</nav>
-		<ShoppingCart className="shopping-cart" />
+		<CartIcon />
 		</div>
 	)
 };
