@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function Product({ id, image, title, description, price}) {
+export default function Product({ id, image, title, description, discountedPrice}) {
 
 	return (
 			<div className="product-card">
@@ -16,10 +16,14 @@ export default function Product({ id, image, title, description, price}) {
 					<p>{description}</p>
 				</div>
 				<div className="info-container">
-					<p>Price: ${price}</p>
+					<p>Price: ${discountedPrice}</p>
 				</div>
 				<div className="info-container">
-					<button className="view-product-button">View product</button>
+				<Link to={`/product/${id}`}>
+				<button className="view-product-button">
+				View product
+				</button>
+				</Link>
 				</div>
 			</div>
 	)

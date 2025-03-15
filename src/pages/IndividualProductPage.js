@@ -2,8 +2,10 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import { useCart } from "../components/CartContext";
 
 export default function IndividualProductPage() {
+  const { addToCart } = useCart();
 
   const { id } = useParams(); // Get the product ID from URL
   const [product, setProduct] = useState(null);
@@ -51,7 +53,9 @@ export default function IndividualProductPage() {
   				)}
 				</div>
 	  			<div className="info-container">
-					<button className="add-to-cart-button">Add to cart</button>
+				  <button className="add-to-cart-button" onClick={addToCart}>
+        Add to cart
+      </button>
 				</div>
 			</div>
 			</main>
