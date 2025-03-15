@@ -4,20 +4,15 @@ import { useCart } from "./CartContext";
 
 export default function CartIcon() {
 	const navigate = useNavigate();
-	const { cartCount } = useCart();
+	const { cart } = useCart(); // Get cart items from context
 
 	return (
-		<button 
-		  onClick={() => navigate("/cart")} 
-		  className="shopping-cart-button"
-		>
-		    <ShoppingCart className="shopping-cart" />
-      {cartCount > 0 && (
-        <span className="cart-count">{cartCount}</span> 
-      )}
-    </button>
-	  );
-	}
+	  <button onClick={() => navigate("/cart")} className="shopping-cart-button">
+		<ShoppingCart className="shopping-cart" />
+		{cart.length > 0 && <span className="cart-count">{cart.length}</span>}
+	  </button>
+	);
+  }
 	
 
 

@@ -29,9 +29,9 @@ export default function IndividualProductPage() {
   }
 
   return (
-    <main>
+	<>
 		<Header />
-		< main className="products">
+		<main className="products">
 			<div className="product-card">
 					<img 
 						className="product-image"
@@ -42,24 +42,33 @@ export default function IndividualProductPage() {
 	 			<div className="info-container">
 					<p>{product.description}</p>
 				</div>
+				
 				<div className="info-container">
-  				{product.discountedPrice < product.price ? (
-   				<>
-    				<p className="original-price"><s>Price: ${product.price}</s></p>
-					<p className="discounted-price">Discounted Price:${product.discountedPrice}</p>
-    			</>
-  				) : (
-					<p className="regular-price">Price: ${product.price}</p>
-  				)}
-				</div>
-	  			<div className="info-container">
-				  <button className="add-to-cart-button" onClick={addToCart}>
-        Add to cart
-      </button>
-				</div>
-			</div>
-			</main>
-	  	<Footer />
-	</main>
+            {typeof product.discountedPrice === "number" &&
+            product.discountedPrice < product.price ? (
+              <>
+                <p className="original-price">
+                  <s>Price: ${product.price}</s>
+                </p>
+                <p className="discounted-price">
+                  Discounted Price: ${product.discountedPrice}
+                </p>
+              </>
+            ) : (
+              <p className="regular-price">Price: ${product.price}</p>
+            )}
+          </div>
+		  
+			<div className="info-container">
+            <button
+              className="add-to-cart-button"
+              onClick={() => addToCart(product)}>
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }
