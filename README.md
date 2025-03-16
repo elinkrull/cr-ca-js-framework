@@ -1,8 +1,14 @@
-# Getting Started with Create React App
+# JavaScript Framework Course Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Built with
 
-## Available Scripts
+- HTML
+
+- CSS
+
+- JavaScript
+
+- CRA (Create-React-App)
 
 In the project directory, you can run:
 
