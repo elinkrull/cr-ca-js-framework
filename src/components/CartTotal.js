@@ -5,7 +5,10 @@ export default function CartTotal() {
   const { cart } = useCart();
 
   // Calculate total price
-  const totalPrice = cart.reduce((total, item) => total + (item.discountedPrice || item.price), 0);
+  const totalPrice = cart.reduce(
+    (total, item) => total + (item.discountedPrice || item.price),
+    0
+  );
 
   return (
     <div className="cart-total">
