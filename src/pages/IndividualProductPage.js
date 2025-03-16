@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import { useCart } from "../components/CartContext";
+import StarRating from "../components/StarRating";
 
 export default function IndividualProductPage() {
   const { addToCart } = useCart();
-
   const { id } = useParams(); // Get the product ID from URL
   const [product, setProduct] = useState(null);
 
@@ -38,12 +38,15 @@ export default function IndividualProductPage() {
 						src={product.image.url} 
 						alt={product.title}
 					/>
-      				<h1 className="product-title" >{product.title}</h1>
+				<div className="info-container">
+					<h1 className="product-title" >{product.title}</h1>
+				</div>
+      				
 	 			<div className="info-container">
 					<p>{product.description}</p>
 				</div>
 				
-				<div className="info-container">
+				<div className="price-container">
             {typeof product.discountedPrice === "number" &&
             product.discountedPrice < product.price ? (
               <>
@@ -58,7 +61,21 @@ export default function IndividualProductPage() {
               <p className="regular-price">Price: ${product.price}</p>
             )}
           </div>
-		  
+
+          {product.reviews.length > 0 && (
+			<div className="reviews-container">
+		    <h3>Reviews:</h3>
+    <ul className="reviews-list">
+      {product.reviews.map((review) => (
+        <li key={review.id} className="review-item">
+          <p>{review.username}: {review.description}</p>
+          <p><StarRating rating={review.rating} /></p>
+        </li>
+      ))}
+    </ul>
+  </div>
+		  )}
+
 			<div className="info-container">
             <button
               className="add-to-cart-button"
