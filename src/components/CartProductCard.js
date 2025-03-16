@@ -11,7 +11,11 @@ export default function CartProductCard() {
         <ul className="cart-list">
           {cart.map((item, index) => (
             <li key={index} className="cart-item">
-              <img src={item.image?.url} alt={item.title} className="cart-image" />
+              <img
+                src={item.image?.url}
+                alt={item.title}
+                className="cart-image"
+              />
               <div>
                 <h2>{item.title}</h2>
                 <p>Price: ${item.discountedPrice || item.price}</p>

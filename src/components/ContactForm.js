@@ -9,10 +9,14 @@ export default function ContactForm() {
 
   function validateForm() {
     let errors = {};
-    if (name.trim().length < 3) errors.name = "Full name must be at least 3 characters.";
-    if (subject.trim().length < 3) errors.subject = "Subject must be at least 3 characters.";
-    if (!/^\S+@\S+\.\S+$/.test(email)) errors.email = "Email must be a valid email address.";
-    if (body.trim().length < 3) errors.body = "Message must be at least 3 characters.";
+    if (name.trim().length < 3)
+      errors.name = "Full name must be at least 3 characters.";
+    if (subject.trim().length < 3)
+      errors.subject = "Subject must be at least 3 characters.";
+    if (!/^\S+@\S+\.\S+$/.test(email))
+      errors.email = "Email must be a valid email address.";
+    if (body.trim().length < 3)
+      errors.body = "Message must be at least 3 characters.";
     setErrors(errors);
     return Object.keys(errors).length === 0;
   }
@@ -23,7 +27,7 @@ export default function ContactForm() {
 
     const formData = { name, subject, email, body };
 
-	// ✅ Log the form data in the console
+    // ✅ Log the form data in the console
     console.log("Form submitted successfully:", formData);
 
     fetch("https://v2.api.noroff.dev/.", {
