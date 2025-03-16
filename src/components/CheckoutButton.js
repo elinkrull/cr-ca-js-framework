@@ -6,7 +6,7 @@ export default function CheckoutButton() {
 	return (
 		<button className="checkout-button"
 		  onClick={() => navigate("/checkout-success")} 
-		>Checkout button
+		>Confirm order
 		</button>
 	  );
 	}
