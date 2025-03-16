@@ -38,7 +38,7 @@ You will be using React Router to switch between pages.
 
 - Clone the repo
 
-<pre></pre>
+<pre>https://github.com/elinkrull/cr-ca-js-framework</pre>
 
 - Install dependencies
 
