@@ -37,7 +37,7 @@ export default function HomePage() {
   );
 
   return (
-    <main className="homepage">
+    <main>
       <Header />
       <Searchbar setSearchQuery={setSearchQuery} />
       <div className="products">
