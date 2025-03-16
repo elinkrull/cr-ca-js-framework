@@ -52,7 +52,7 @@ You will be using React Router to switch between pages.
 
 Live website:
 
-<pre>https://ca-js-frameworks.netlify.app/</pre>
+https://ca-js-frameworks.netlify.app/
 
 ## Contact
 
