@@ -1,7 +1,7 @@
 import { useCart } from "../components/CartContext";
 
 export default function CartProductCard() {
-  const { cart } = useCart(); // Henter cart fra context
+  const { cart } = useCart();
 
   return (
     <>

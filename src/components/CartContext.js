@@ -7,11 +7,16 @@ export function CartProvider({ children }) {
 
   // Function to add items to the cart
   function addToCart(product) {
-    setCart((prevCart) => [...prevCart, product]); // Adds product to cart array
+    // Adds product to cart array
+    setCart((prevCart) => [...prevCart, product]);
+  }
+
+  function clearCart() {
+    setCart([]);
   }
 
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider value={{ cart, addToCart, clearCart }}>
       {children}
     </CartContext.Provider>
   );
