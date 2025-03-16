@@ -7,7 +7,7 @@ export default function Header() {
       <Link to="/" className="nav-link">
         <h1>HAPPYSHOP</h1>
       </Link>
-      <nav className="navbar">
+      <nav>
         <Link to="/" className="nav-link">
           PRODUCTS
         </Link>
