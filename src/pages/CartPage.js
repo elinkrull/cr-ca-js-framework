@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import CheckoutButton from "../components/CheckoutButton";
 import CartProductCard from "../components/CartProductCard";
+import CartTotal from "../components/CartTotal";
 
 export default function CartPage() {
 	
@@ -9,8 +10,9 @@ export default function CartPage() {
     <>
 	  <Header />
 	  <main className="cart-page">
-	  <h1>Your Cart</h1>
+	  <h2>Your Cart</h2>
 	  <CartProductCard />
+	  <CartTotal />
 	  <CheckoutButton />
       </main>
       <Footer />

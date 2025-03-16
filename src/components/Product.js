@@ -28,13 +28,3 @@ export default function Product({ id, image, title, description, discountedPrice
 			</div>
 	)
 }
-
-// const product = {
-//     title: "#",
-//     description: "Mr. Whiskerson",
-//     image: "(800) 555-1234",
-//     reviews: "mr.whiskaz@catnap.meow"
-// }
-
-// const {image, title} = product
-// console.log(title)
