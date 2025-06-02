@@ -9,8 +9,8 @@ export default function CartProductCard() {
         <p>Your cart is empty.</p>
       ) : (
         <ul className="cart-list">
-          {cart.map((item, index) => (
-            <li key={index} className="cart-item">
+          {cart.map((item) => (
+            <li key={item.id} className="cart-item">
               <img
                 src={item.image?.url}
                 alt={item.title}

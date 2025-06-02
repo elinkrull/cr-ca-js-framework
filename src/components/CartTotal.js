@@ -10,9 +10,5 @@ export default function CartTotal() {
     0
   );
 
-  return (
-    <div className="cart-total">
-      <h2>Total Price: ${totalPrice.toFixed(2)}</h2>
-    </div>
-  );
+  return <h2 className="cart-total">Total Price: ${totalPrice.toFixed(2)}</h2>;
 }

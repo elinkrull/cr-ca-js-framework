@@ -8,7 +8,7 @@ export default function ContactForm() {
   const [errors, setErrors] = useState({});
 
   function validateForm() {
-    let errors = {};
+    const errors = {};
     if (name.trim().length < 3)
       errors.name = "Full name must be at least 3 characters.";
     if (subject.trim().length < 3)
@@ -27,9 +27,6 @@ export default function ContactForm() {
 
     const formData = { name, subject, email, body };
 
-    // ✅ Log the form data in the console
-    console.log("Form submitted successfully:", formData);
-
     fetch("https://v2.api.noroff.dev/.", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -45,7 +42,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div>
+    <>
       <form className="contact-form" onSubmit={onFormSubmit}>
         <label htmlFor="name">Full name</label>
         <input
@@ -85,6 +82,6 @@ export default function ContactForm() {
           </button>
         </div>
       </form>
-    </div>
+    </>
   );
 }
