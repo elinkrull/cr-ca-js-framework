@@ -1,5 +1,13 @@
-import { useCart } from "../components/CartContext";
+import { useCart } from "./CartContext";
 
+/**
+ * CartProductCard component displays the list of products in the cart
+ *
+ * - Retrieves cart items from CartContext.
+ * - Renders a message if the cart is empty.
+ * - Otherwise, renders a list of products with their image, title, and price
+ * @returns } The rendered list of cart items or empty message.
+ */
 export default function CartProductCard() {
   const { cart } = useCart();
 

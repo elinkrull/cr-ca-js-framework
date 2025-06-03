@@ -1,5 +1,5 @@
 import Searchbar from "../components/Searchbar";
-import Product from "../components/Product";
+import ProductList from "../components/ProductList";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -16,8 +16,7 @@ export default function HomePage() {
       try {
         const response = await fetch(urlOnlineShop);
         const result = await response.json(); // Convert response to JSON
-        console.log(result); // Log the data
-        // Check if result contains a 'data' key
+
         if (result && result.data) {
           setProducts(result.data); // Save the products in state
         } else {
@@ -40,24 +39,15 @@ export default function HomePage() {
     <main>
       <Header />
       <Searchbar setSearchQuery={setSearchQuery} />
-      <div className="products">
-        {filteredProducts.length > 0 ? (
-          filteredProducts.map((product) => (
-            <Product
-              key={product.id}
-              id={product.id}
-              image={product.image.url}
-              title={product.title}
-              description={product.description}
-              reviews="Reviews here"
-              price={product.price}
-              discountedPrice={product.discountedPrice}
-            />
-          ))
-        ) : (
-          <p>No products found...</p>
-        )}
-      </div>
+
+      {filteredProducts.length > 0 ? (
+        <ProductList products={filteredProducts} />
+      ) : (
+        <p style={{ textAlign: "center", marginTop: "2rem" }}>
+          No products found...
+        </p>
+      )}
+
       <Footer />
     </main>
   );
