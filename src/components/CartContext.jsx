@@ -2,15 +2,22 @@ import { createContext, useContext, useState } from "react";
 
 const CartContext = createContext();
 
+/**
+ * Provides cart state and functions to children components.
+ */
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
-  // Function to add items to the cart
+  /**
+   * Adds a product to the cart
+   */
   function addToCart(product) {
-    // Adds product to cart array
     setCart((prevCart) => [...prevCart, product]);
   }
 
+  /**
+   * Clears all items from the cart.
+   */
   function clearCart() {
     setCart([]);
   }
@@ -22,7 +29,9 @@ export function CartProvider({ children }) {
   );
 }
 
-// Hook to use the cart context
+/**
+ * Custom hook to access the cart context.
+ */
 export function useCart() {
   return useContext(CartContext);
 }
