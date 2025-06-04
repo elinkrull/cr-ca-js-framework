@@ -1,20 +1,17 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import CheckoutButton from "../components/CheckoutButton";
 import CartProductCard from "../components/CartProductCard";
 import CartTotal from "../components/CartTotal";
+import Layout from "../components/Layout";
 
 export default function CartPage() {
   return (
-    <>
-      <Header />
-      <main className="cart-page">
+    <Layout>
+      <div className="cart-page">
         <h2>Your Cart</h2>
         <CartProductCard />
         <CartTotal />
         <CheckoutButton />
-      </main>
-      <Footer />
-    </>
+      </div>
+    </Layout>
   );
 }

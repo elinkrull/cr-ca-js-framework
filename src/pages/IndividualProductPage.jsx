@@ -1,9 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import { useCart } from "../components/CartContext";
 import StarRating from "../components/StarRating";
+import Layout from "../components/Layout";
 
 export default function IndividualProductPage() {
   const { addToCart } = useCart();
@@ -31,8 +30,7 @@ export default function IndividualProductPage() {
   }
 
   return (
-    <>
-      <Header />
+    <Layout>
       <main className="individual-product-page">
         <div className="product-card individual-product-card">
           <div className="individual-product-image-container">
@@ -91,8 +89,6 @@ export default function IndividualProductPage() {
           </div>
         </div>
       </main>
-
-      <Footer />
-    </>
+    </Layout>
   );
 }

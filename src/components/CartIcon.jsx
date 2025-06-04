@@ -14,9 +14,13 @@ export default function CartIcon() {
   const { cart } = useCart();
 
   return (
-    <button onClick={() => navigate("/cart")} className="shopping-cart-button">
-      <ShoppingCart className="shopping-cart" />
-      {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
-    </button>
+    <div className="cart-icon-container">
+      <button
+        onClick={() => navigate("/cart")}
+        className="shopping-cart-button">
+        <ShoppingCart className="shopping-cart" />
+        {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
+      </button>
+    </div>
   );
 }

@@ -1,8 +1,7 @@
 import Searchbar from "../components/Searchbar";
 import ProductList from "../components/ProductList";
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Layout from "../components/Layout";
 
 export default function HomePage() {
   //API URL
@@ -36,19 +35,13 @@ export default function HomePage() {
   );
 
   return (
-    <main>
-      <Header />
+    <Layout>
       <Searchbar setSearchQuery={setSearchQuery} />
-
       {filteredProducts.length > 0 ? (
         <ProductList products={filteredProducts} />
       ) : (
-        <p style={{ textAlign: "center", marginTop: "2rem" }}>
-          No products found...
-        </p>
+        <p className="no-products-found-msg">No products found...</p>
       )}
-
-      <Footer />
-    </main>
+    </Layout>
   );
 }

@@ -19,14 +19,18 @@ export default function CartProductCard() {
         <ul className="cart-list">
           {cart.map((item) => (
             <li key={item.id} className="cart-item">
-              <img
-                src={item.image?.url}
-                alt={item.title}
-                className="cart-image"
-              />
-              <div>
-                <h2>{item.title}</h2>
-                <p>Price: ${item.discountedPrice || item.price}</p>
+              <div className="cart-image-container">
+                <img
+                  src={item.image?.url}
+                  alt={item.title}
+                  className="cart-image"
+                />
+              </div>
+              <div className="cart-info">
+                <h2 className="cart-title">{item.title}</h2>
+                <p className="cart-price">
+                  Price: ${item.discountedPrice || item.price}
+                </p>
               </div>
             </li>
           ))}
